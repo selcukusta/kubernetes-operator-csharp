@@ -1,0 +1,14 @@
+apiVersion: selcukusta.com/v1alpha1
+kind: LinkedConfigMap
+metadata:
+  name: dummy-linked-configmap
+spec:
+  linkedDeployments:
+    - name: nginx
+      containerName: nginx
+      mountPath: /tmp
+  config:
+    configMapName: sampleconfig
+    configMapKey: basic.conf
+    configMapValue: |
+      ;hello=neptune
